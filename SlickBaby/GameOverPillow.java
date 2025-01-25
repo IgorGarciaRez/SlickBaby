@@ -6,14 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GameOver extends World
+public class GameOverPillow extends World
 {
 
     /**
      * Constructor for objects of class GameOver.
      * 
      */
-    public GameOver()
+    public GameOverPillow()
     {    
         super(900, 600, 1);
         prepare();
@@ -22,8 +22,8 @@ public class GameOver extends World
     private void prepare(){
         Restart restart = new Restart();
         Quit quit = new Quit();
-        addObject(restart, getWidth()/2, 400);
-        addObject(quit, getWidth()/2, 500);
+        addObject(restart, getWidth()/2, 200);
+        addObject(quit, getWidth()/2, 270);
     }
     
     public void started(){

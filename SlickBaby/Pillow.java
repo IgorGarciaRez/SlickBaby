@@ -41,8 +41,8 @@ public class Pillow extends Actor
     
     public void verifyCollision(){
         Player player = (Player) getOneIntersectingObject(Player.class);
-        if(player != null){
-            player.die();
+        if(player != null){   
+            player.diePillow();
         }
     }
     

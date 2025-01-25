@@ -1,30 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * Write a description of class GameOverSpider here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class TitleScreen extends World
+public class GameOverSpider extends World
 {
 
     /**
-     * Constructor for objects of class Menu.
+     * Constructor for objects of class GameOverSpider.
      * 
      */
-    public TitleScreen()
+    public GameOverSpider()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1);
         prepare();
     }
     
     private void prepare(){
-        Start start = new Start();
+        Restart restart = new Restart();
         Quit quit = new Quit();
-        addObject(start, 250, 300);
-        addObject(quit, 210, 400);
+        addObject(restart, getWidth()/2, 300);
+        addObject(quit, getWidth()/2, 370);
     }
     
     public void started(){

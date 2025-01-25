@@ -19,7 +19,7 @@ public class MyWorld extends World
     private int scoreCounter = 0;
     TextDisplay textDisplay = new TextDisplay("Score: "+score);
     
-    private int difficultyMod = 1;
+    private int difficultyMod = 30;
     private int shadowSpawnSpeed = 100;
     
     private int enemySpeed = 1;
@@ -141,8 +141,12 @@ public class MyWorld extends World
         setBackground(background);
     }
     
-    public void endGame(){
-        Greenfoot.setWorld(new GameOver());
+    public void endGame(boolean spider){
+        if(spider){
+            Greenfoot.setWorld(new GameOverSpider());
+        }else{
+            Greenfoot.setWorld(new GameOverPillow());
+        }
     }
     
 }

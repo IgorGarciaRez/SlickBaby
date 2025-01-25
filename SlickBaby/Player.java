@@ -55,7 +55,7 @@ public class Player extends Actor
             }
             moveAround();
         }else{
-            Greenfoot.setWorld(new GameOver());
+            Greenfoot.setWorld(new GameOverPillow());
         }
     }
     
@@ -149,10 +149,16 @@ public class Player extends Actor
         return isAlive;
     }
     
-    public void die(){
+    public void diePillow(){
         isAlive = false;
         MyWorld world = getWorldOfType(MyWorld.class);
-        world.endGame();
+        world.endGame(false);
+    }
+    
+    public void dieSpider(){
+        isAlive = false;
+        MyWorld world = getWorldOfType(MyWorld.class);
+        world.endGame(true);
     }
     
     public int animar(){
