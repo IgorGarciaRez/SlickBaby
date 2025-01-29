@@ -9,15 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
 
-    /**
-     * Constructor for objects of class Menu.
-     * 
-     */
+    private GreenfootSound bgMusic = new GreenfootSound("happysong.wav");
+    
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(900, 600, 1);
         prepare();
+        //bgMusic.playLoop();
     }
     
     private void prepare(){
@@ -25,13 +24,5 @@ public class TitleScreen extends World
         Quit quit = new Quit();
         addObject(start, 250, 300);
         addObject(quit, 210, 400);
-    }
-    
-    public void started(){
-        
-    }
-    
-    public void stopped(){
-        
     }
 }

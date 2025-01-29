@@ -21,7 +21,7 @@ public class Enemy extends Actor
     
     public Enemy(int speed){
         this.speed = speed;
-        health = 2;
+        health = 9;
         initAnimationSprites();
     }
     

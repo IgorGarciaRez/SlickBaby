@@ -23,6 +23,8 @@ public class Player extends Actor
     
     private GreenfootSound soundSpit = new GreenfootSound("laserShoot.wav");
     
+    private String pacifierColor;
+    
     private int frameIndex = 0;
     private int animCounter = 0;
     private int animSpeed = 8;
@@ -32,9 +34,14 @@ public class Player extends Actor
     
     private String direction = "front";
     
-    public Player(){
+    public Player(String pacifierColor){
+        this.pacifierColor = pacifierColor;
         initAnimationSprites();
-        timeFromLastShoot = 25;
+        if(pacifierColor.equals("pink")){
+            timeReload = new Pacifier1().getTimeToReload();
+        }else if(pacifierColor.equals("blue")){
+            timeReload = new Pacifier2().getTimeToReload();
+        }
     }
     
     public void act()
@@ -55,7 +62,7 @@ public class Player extends Actor
             }
             moveAround();
         }else{
-            Greenfoot.setWorld(new GameOverPillow());
+            Greenfoot.setWorld(new GameOverPillow(0));
         }
     }
     
@@ -138,10 +145,17 @@ public class Player extends Actor
         MouseInfo mi = Greenfoot.getMouseInfo();
         if (mi != null && timeFromLastShoot >= timeReload) {
             soundSpit.play();
-            Pacifier pacifier = new Pacifier(8);
-            pacifier.setRotation(getAngle());
-            getWorld().addObject(pacifier, getX(), getY());
-            timeFromLastShoot = 0;
+            if(pacifierColor.equals("pink")){
+                Pacifier1 pacifier = new Pacifier1();
+                pacifier.setRotation(getAngle());
+                getWorld().addObject(pacifier, getX(), getY());
+                timeFromLastShoot = 0;
+            }else if(pacifierColor.equals("blue")){
+                Pacifier2 pacifier = new Pacifier2();
+                pacifier.setRotation(getAngle());
+                getWorld().addObject(pacifier, getX(), getY());
+                timeFromLastShoot = 0;
+            }
         }
     }
     

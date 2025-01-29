@@ -11,6 +11,6 @@ public class Restart extends Buttons
     public void act()
     {
         checkMouse();
-        checkClick(new MyWorld());
+        checkClick(new Intro());
     }
 }

@@ -8,15 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameOverSpider extends World
 {
+    TextDisplay textDisplay = new TextDisplay("Score: ");
 
-    /**
-     * Constructor for objects of class GameOverSpider.
-     * 
-     */
-    public GameOverSpider()
+    public GameOverSpider(int score)
     {    
         super(900, 600, 1);
         prepare();
+        textDisplay.setText("Score: "+score);
+        addObject(textDisplay, super.getWidth()/2+50, 250);
     }
     
     private void prepare(){
@@ -24,13 +23,5 @@ public class GameOverSpider extends World
         Quit quit = new Quit();
         addObject(restart, getWidth()/2, 300);
         addObject(quit, getWidth()/2, 370);
-    }
-    
-    public void started(){
-        
-    }
-    
-    public void stopped(){
-        
     }
 }

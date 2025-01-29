@@ -19,21 +19,24 @@ public class MyWorld extends World
     private int scoreCounter = 0;
     TextDisplay textDisplay = new TextDisplay("Score: "+score);
     
-    private int difficultyMod = 30;
+    private int difficultyMod = 15;
     private int shadowSpawnSpeed = 100;
     
     private int enemySpeed = 1;
     
     Random random = new Random();
     
-    public MyWorld()
+    private GreenfootSound bgMusic = new GreenfootSound("tensesong.wav");
+    
+    public MyWorld(String pacifierColor)
     {    
         super(900, 600, 1);
         fillBackgroundWithSprite("chao.png");
         addObject(textDisplay, super.getWidth()/2+50, 50);
-        Player player = new Player();
+        Player player = new Player(pacifierColor);
         addObject(player, super.getWidth()/2, super.getHeight()/2);
         enemyRand = random.nextInt(enemyTimeSpawn) + enemyRandTimeSpawn;
+        bgMusic.playLoop();
     }
     
     public void act(){
@@ -98,11 +101,11 @@ public class MyWorld extends World
     
     public void updateDifficulty(){
         if(score % difficultyMod == 0){
-            if(enemySpeed < 7){
+            if(enemySpeed < 8){
                 enemySpeed++;
             }if(enemyTimeSpawn >= 100){
                 enemyTimeSpawn = enemyTimeSpawn - 50;
-            }if(shadowSpawnSpeed >= 25){
+            }if(shadowSpawnSpeed >= 15){
                 shadowSpawnSpeed = shadowSpawnSpeed-5;
             }
         }
@@ -143,9 +146,9 @@ public class MyWorld extends World
     
     public void endGame(boolean spider){
         if(spider){
-            Greenfoot.setWorld(new GameOverSpider());
+            Greenfoot.setWorld(new GameOverSpider(score));
         }else{
-            Greenfoot.setWorld(new GameOverPillow());
+            Greenfoot.setWorld(new GameOverPillow(score));
         }
     }
     
