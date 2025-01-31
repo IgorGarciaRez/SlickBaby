@@ -28,4 +28,5 @@ Tem acoplamento implícito? Não
 Tem replicação de código? Não
 Tem duas superclasses com subclasses com implementação útil? Sim
 
-Algum comentário sobre o Greenfoot? IDE bem limitante :(
+Algum comentário sobre o Greenfoot? 
+IDE bem limitante!! Preferiria ter usado uma biblioteca em java
