@@ -1,14 +1,14 @@
 # SlickBaby
 A game made for the course Introduction to Object-Oriented Programming at UFLA
 
-INFORMAÇÕES GERAIS
+## INFORMAÇÕES GERAIS
 
 Nome do jogo: Slick Baby
 
 Integrantes do grupo:
 - Igor Garcia Rezende
 
-GAMEPLAY
+### GAMEPLAY
 
 Número de classes de atores com ação: 15
 Número de classes de mundo: 5
@@ -18,7 +18,7 @@ Permite várias partidas no próprio gameplay? Sim
 Tem tela inicial? Sim
 Tem tela de histórico de pontuação? Sim
 
-REQUISITOS DE OO
+### REQUISITOS DE OO
 
 Atende aos requisitos de OO da primeira entrega? Sim
 Tem alta coesão? Sim
