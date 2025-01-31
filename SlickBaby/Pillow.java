@@ -28,6 +28,7 @@ public class Pillow extends Actor
     {
         if (!soundPlayed) {
             ((MyWorld) getWorld()).shake();
+            sound.setVolume(80);
             sound.play();
             soundPlayed = true;
         }

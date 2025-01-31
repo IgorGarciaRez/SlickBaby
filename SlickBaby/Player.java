@@ -22,6 +22,7 @@ public class Player extends Actor
     private GreenfootImage[] walkLeft = new GreenfootImage[4];
     
     private GreenfootSound soundSpit = new GreenfootSound("laserShoot.wav");
+    private GreenfootSound deathScream = new GreenfootSound("deathScream.mp3");
     
     private String pacifierColor;
     
@@ -165,12 +166,14 @@ public class Player extends Actor
     
     public void diePillow(){
         isAlive = false;
+        deathScream.play();
         MyWorld world = getWorldOfType(MyWorld.class);
         world.endGame(false);
     }
     
     public void dieSpider(){
         isAlive = false;
+        deathScream.play();
         MyWorld world = getWorldOfType(MyWorld.class);
         world.endGame(true);
     }

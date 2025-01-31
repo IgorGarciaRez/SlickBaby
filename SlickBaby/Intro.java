@@ -14,7 +14,7 @@ public class Intro extends World
     public Intro()
     {    
         super(900, 600, 1);
-        fillBackgroundWithSprite("grass.png");
+        //fillBackgroundWithSprite("grass.png");
         prepare();
     }
     
@@ -45,11 +45,11 @@ public class Intro extends World
     
     public void prepare(){
         Player player = new Player("pink");
-        addObject(player, super.getWidth()/2, super.getHeight()/2);
+        addObject(player, super.getWidth()/2, 500);
         Frog frog = new Frog();
-        addObject(frog, super.getWidth()/2, super.getHeight()/4);
+        addObject(frog, super.getWidth()/2, super.getHeight()/2);
         ChatPacifier chatPacifier = new ChatPacifier();
-        addObject(chatPacifier,630,80);
+        addObject(chatPacifier,630,220);
         addObject(pacifier1,250,400);
         pacifier1.setSpeed(0);
         addObject(pacifier2,650,400);

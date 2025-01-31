@@ -11,6 +11,6 @@ public class Start extends Buttons
     public void act()
     {
         checkMouse();
-        checkClick(new Intro());
+        checkClick(new Instructions());
     }
 }

@@ -26,8 +26,6 @@ public class MyWorld extends World
     
     Random random = new Random();
     
-    private GreenfootSound bgMusic = new GreenfootSound("tensesong.wav");
-    
     public MyWorld(String pacifierColor)
     {    
         super(900, 600, 1);
@@ -36,7 +34,6 @@ public class MyWorld extends World
         Player player = new Player(pacifierColor);
         addObject(player, super.getWidth()/2, super.getHeight()/2);
         enemyRand = random.nextInt(enemyTimeSpawn) + enemyRandTimeSpawn;
-        bgMusic.playLoop();
     }
     
     public void act(){

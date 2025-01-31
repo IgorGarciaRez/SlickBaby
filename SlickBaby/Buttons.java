@@ -11,19 +11,29 @@ public class Buttons extends Actor
     private boolean mouseOver = false;
     private final int maxTransparency = 255;
     
+    private GreenfootSound hover = new GreenfootSound("hover.wav");
+    private boolean alreadyPlayed = false;
+    private GreenfootSound click = new GreenfootSound("click.wav");
+    
     public void checkMouse(){
         if(Greenfoot.mouseMoved(null)){
             mouseOver = Greenfoot.mouseMoved(this);
         }
         if(mouseOver){
             adjTrans(maxTransparency/2);
+            if(!alreadyPlayed){
+                hover.play();
+                alreadyPlayed = true;
+            }
         }else{
             adjTrans(maxTransparency);
+            alreadyPlayed = false;
         }
     }
     
     public void checkClick(World world){
         if(Greenfoot.mouseClicked(this)){
+            click.play();
             Greenfoot.setWorld(world);
         }
     }

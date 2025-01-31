@@ -13,6 +13,8 @@ public class Enemy extends Actor
     
     private GreenfootImage[] movingSprites = new GreenfootImage[2];
     
+    private GreenfootSound hurt = new GreenfootSound("enemyHurt.wav");
+    
     private boolean direct = false;
     
     private int frameIndex = 0;
@@ -23,6 +25,7 @@ public class Enemy extends Actor
         this.speed = speed;
         health = 9;
         initAnimationSprites();
+        hurt.setVolume(80);
     }
     
     public void act()
@@ -55,6 +58,7 @@ public class Enemy extends Actor
     
     public void takeDamage(int damage){
         health = health - damage;
+        hurt.play();
         if(health <= 0){
             getWorld().removeObject(this);
         }

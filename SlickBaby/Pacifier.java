@@ -12,6 +12,12 @@ public class Pacifier extends Actor
     protected int damage;
     protected int timeToReload;
     
+    private GreenfootSound pcfSelect = new GreenfootSound("pacifierSelect.wav");
+    
+    public Pacifier(){
+        pcfSelect.setVolume(80);
+    }
+    
     public void act()
     {
         move(speed);
@@ -45,6 +51,7 @@ public class Pacifier extends Actor
     public boolean verifyCollisionPlayer(){
         Player player = (Player) getOneIntersectingObject(Player.class);
         if(player != null){
+            pcfSelect.play();
             return true;
         }else{
             return false;
